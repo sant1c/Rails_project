@@ -1,0 +1,25 @@
+<% if @profile.errors.any? %>
+  <ul>
+    <% @profile.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_for @profile do |p| %>
+  <p>
+    <%= p.label :title %><br/>
+    <%= p.text_field :title %>
+  </p>
+  <p>
+    <%= p.label :description %><br>
+    <%=p.text_area :description %>
+  </p >
+  <p>
+    <%= p.submit %>
+  </p>
+  <p>
+    <%= link_to "All Profiles", profiles_path %>
+  </p>
+<% end %>

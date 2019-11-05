@@ -1,0 +1,21 @@
+<h1>List of Profiles</h1>
+
+<p>
+  <%= link_to "Create new Profile", new_profile_path %>
+</p>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+  <% @profiles.each do |profile| %>
+    <tr>
+      <td><%= profile.title %></td>
+      <td><%= profile.description %></td>
+      <td><%= link_to "Edit", edit_profile_path(profile) %></td>
+      <td><%= link_to "Show", profile_path(profile) %></td>
+      <td><%= link_to "Delete", profile_path(profile), method: :delete, data: {confirm: "Are you sure?"} %></td>
+    </tr>
+  <% end %>
+</table>
