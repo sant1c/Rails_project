@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  before_action :set_profile, only: [:edit, :update, :show, :destroy]
 
   def index
     @profiles = Profile.all
@@ -21,16 +22,12 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @profile = Profile.find(params[:id])
-
   end
 
   def edit
-    @profile = Profile.find(params[:id])
   end
 
   def update
-    @profile = Profile.find(params[:id])
     if @profile.update(profile_params)
       flash[:notice] = "Article was updated"
       redirect_to profile_path(@profile)
@@ -40,7 +37,6 @@ class ProfilesController < ApplicationController
   end
 
   def destroy
-    @profile = Profile.find(params[:id])
     @profile.destroy
     flash[:notice] = "Profile was deleted"
     redirect_to profiles_path
@@ -48,6 +44,9 @@ class ProfilesController < ApplicationController
 
 
   private 
+    def set_profile
+      @profile = Profile.find(params[:id])
+    end
     def profile_params
       params.require(:profile).permit(:title, :description)
     end
