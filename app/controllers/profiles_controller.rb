@@ -13,7 +13,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profile_params)
     puts @profile.errors
     if @profile.save
-      flash[:notice]= "Profile was saved"
+      flash[:success]= "Profile was saved"
       redirect_to profile_path(@profile)
     else
       render 'new'
@@ -29,7 +29,7 @@ class ProfilesController < ApplicationController
 
   def update
     if @profile.update(profile_params)
-      flash[:notice] = "Article was updated"
+      flash[:success] = "Article was updated"
       redirect_to profile_path(@profile)
     else
       render 'edit'
@@ -38,7 +38,7 @@ class ProfilesController < ApplicationController
 
   def destroy
     @profile.destroy
-    flash[:notice] = "Profile was deleted"
+    flash[:danger] = "Profile was deleted"
     redirect_to profiles_path
   end
 

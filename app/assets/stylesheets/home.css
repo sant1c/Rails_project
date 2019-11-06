@@ -1,6 +1,9 @@
 h1 {
   color: green;
 }
+nav .navbar {
+  background-color: red;
+}
 
 #logo {
   float: left;
@@ -12,13 +15,13 @@ h1 {
 }
 
 #logo:hover {
-  color: #fff;
+  /* color: #fff; */
   text-decoration: none;
 }
 
 .center {
   text-align: center;
-  height: 550px;
+  /* height: 550px; */
 }
 
 .center h1 {
@@ -26,13 +29,20 @@ h1 {
   font-weight: bold;
 }
 
+.profile-actions {
+  border-top: 1px solid #eaeaea;
+  padding-top: 5px;
+}
+
+.description {
+  margin: 2px;
+}
+
 footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777;
-  position: absolute;
-  bottom: 0;
   width: 100%;
   height: 5.5rem;
   font-size: 25px;
