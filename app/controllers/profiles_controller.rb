@@ -11,6 +11,7 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = Profile.new(profile_params)
+    @profile.user = User.first
     puts @profile.errors
     if @profile.save
       flash[:success]= "Profile was saved"

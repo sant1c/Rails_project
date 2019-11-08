@@ -9,6 +9,12 @@
         </div>
         <div class = "profile-body">
           <%= truncate(profile.description, length: 100) %>
+          <div class = "profile-meta-details">
+            <small>Created By: <%= profile.user.username if profile.user %>,
+                    <%= time_ago_in_words(profile.created_at) %> ago,
+                    Last Updated: <%= time_ago_in_words(profile.updated_at) %> ago
+            </small>
+          </div>
         </div>
         <div class = "profile-actions">
           <%= link_to "Delete Profile", profile_path(profile), method: :delete, 
