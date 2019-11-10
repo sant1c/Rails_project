@@ -1,28 +1,3 @@
 <h1 align="center">List of Profiles</h1>
 
-<% @profiles.each do |profile| %>
-  <div class = "row profile-list">
-    <div class = "col-lg-8 offset-lg-2">
-      <div class = "card">
-        <div class = "profile-title">
-          <%= link_to profile.title, profile_path(profile) %>
-        </div>
-        <div class = "profile-body">
-          <%= truncate(profile.description, length: 100) %>
-          <div class = "profile-meta-details">
-            <small>Created By: <%= profile.user.username if profile.user %>,
-                    <%= time_ago_in_words(profile.created_at) %> ago,
-                    Last Updated: <%= time_ago_in_words(profile.updated_at) %> ago
-            </small>
-          </div>
-        </div>
-        <div class = "profile-actions">
-          <%= link_to "Delete Profile", profile_path(profile), method: :delete, 
-                        data: {confirm: "Are you sure you want to delete this article"}, 
-                        class: "btn btn-xs btn-danger" %>
-          <%= link_to "Edit Profile", edit_profile_path(profile), class: "btn btn-xs btn-primary" %>
-        </div>
-      </div>
-    </div>
-  </div>
-<% end %>
+<%= render 'profile', obj: @profiles %>
