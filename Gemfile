@@ -16,7 +16,7 @@ gem 'will_paginate', '3.1.7'
 gem 'will_paginate-bootstrap4'
 # Use SCSS for stylesheets
 gem 'bootstrap', '~> 4.3', '>= 4.3.1'
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sass-rails', '~> 5'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
