@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only: [:edit, :update, :show, :destroy]
 
   def index
-    @profiles = Profile.all
+    @profiles = Profile.paginate(page: params[:page], per_page: 5)
   end
 
   def new

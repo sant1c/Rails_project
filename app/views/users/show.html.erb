@@ -11,4 +11,8 @@
 <h4 align= "center">
   <%= @user.username %>'s profiles
 </h4>
-<%= render 'profiles/profile', obj: @user.profiles %>
+<%= will_paginate @user_profiles, list_classes: %w(pagination justify-content-center), previous_label: 'Prev', next_label: 'Next' %>
+
+<%= render 'profiles/profile', obj: @user_profiles %>
+
+<%= will_paginate @user_profiles, list_classes: %w(pagination justify-content-center), previous_label: 'Prev', next_label: 'Next' %>

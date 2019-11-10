@@ -1,0 +1,22 @@
+<h1 align="center">List of Users</h1>
+
+<div align = "center">
+  <%= will_paginate list_classes: %w(pagination justify-content-center), previous_label: 'Prev', next_label: 'Next' %>
+  <% @users.each do |user| %>
+    <ul class= "listing">
+      <div class="row">
+        <div class = "card col-lg-4 offset-lg-4">
+          <li><%= link_to gravatar_for(user), user_path(user) %></li>
+          <li class="article-title">
+            <%= link_to user.username, user_path(user) %>
+          </li>
+          <li>
+            <small><%= pluralize(user.profiles.count, "profile") if user.profiles%></small>
+          </li>
+        </div>
+        </div>
+      <div>
+    </ul>
+  <% end %>
+  <%= will_paginate list_classes: %w(pagination justify-content-center), previous_label: 'Prev', next_label: 'Next' %>
+</div>

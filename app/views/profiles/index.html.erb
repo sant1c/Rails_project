@@ -1,3 +1,9 @@
 <h1 align="center">List of Profiles</h1>
 
+<div align = "center">
+  <%= will_paginate list_classes: %w(pagination justify-content-center), previous_label: 'Prev', next_label: 'Next' %>
+</div>
 <%= render 'profile', obj: @profiles %>
+<div align = "center">
+  <%= will_paginate list_classes: %w(pagination justify-content-center) %>
+</div>
